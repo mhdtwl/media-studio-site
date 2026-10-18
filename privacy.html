@@ -4,20 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy Policy – Media Studio</title>
-    <meta name="description" content="How Media Studio, the publishing tool for the Blip &amp; Friends channels, handles data from YouTube, Instagram, Facebook, Threads, TikTok, X and Pinterest." />
+    <meta name="description" content="How Media Studio, the publishing tool for the Blip &amp; Friends channels, handles data from YouTube, Instagram, Facebook, Threads, TikTok, X, Pinterest, Bluesky, Mastodon and LinkedIn." />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
       <p class="back"><a href="index.html">← Media Studio</a></p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Media Studio · Effective 2026-10-17</p>
+      <p class="meta">Media Studio · Effective 2026-10-18</p>
 
       <h2>Who we are</h2>
       <p>
         Media Studio is a private tool that the operator of the <strong>Blip &amp; Friends</strong>
         channels runs on their own computer to publish the channels' own videos to YouTube,
-        Instagram, Facebook, Threads, TikTok, X and Pinterest. It is not offered to the public and has no user
+        Instagram, Facebook, Threads, TikTok, X, Pinterest, Bluesky, Mastodon and LinkedIn. It is not offered to the public and has no user
         accounts of its own.
       </p>
       <p>
@@ -42,7 +42,8 @@
         <li>
           <strong>View your YouTube account</strong> (<code>youtube.readonly</code>): to look up the
           channel's most recent uploads, so that a video is never uploaded twice after an
-          interrupted upload.
+          interrupted upload, and to read the view, like and comment counts of the channel's own
+          videos so the operator can see which ones work.
         </li>
       </ul>
 
@@ -74,6 +75,17 @@
           <code>pages_manage_posts</code>: to publish and schedule the Page's own Reels and photos and check
           its recent Reels for the same reason.
         </li>
+        <li>
+          <code>instagram_manage_comments</code>: to add the operator's own first comment under a post
+          the app just published, and to read that post's comments only to check the first comment is
+          not added twice. No other comments are stored or answered.
+        </li>
+        <li>
+          <code>instagram_manage_insights</code> and <code>read_insights</code>: to read the view,
+          like, comment, share and save counts of the app's own posts, so the operator can see which
+          posts work. Only these totals are stored, on the operator's computer; no data about the
+          people who watched is read.
+        </li>
       </ul>
 
       <h3>Threads (Meta)</h3>
@@ -82,6 +94,14 @@
           <code>threads_basic</code> and <code>threads_content_publish</code>: to read the Threads
           account's ID and username, publish its own posts, and check its recent posts so a post is
           never published twice.
+        </li>
+        <li>
+          <code>threads_manage_replies</code>: to add the operator's own first reply under a post the
+          app just published. The app does not read or answer other people's replies.
+        </li>
+        <li>
+          <code>threads_manage_insights</code>: to read the view, like, reply, repost and quote
+          counts of the app's own posts. Only these totals are stored, on the operator's computer.
         </li>
       </ul>
 
@@ -127,15 +147,63 @@
           <code>pins:write</code>: to upload the account's own videos and create Pins with them.
         </li>
         <li>
-          <code>pins:read</code>: to check the board's recent Pins so a video is never pinned twice.
+          <code>pins:read</code>: to check the board's recent Pins so a video is never pinned twice,
+          and to read the impression, save and click counts of the app's own Pins.
         </li>
+      </ul>
+
+      <h3>Bluesky</h3>
+      <ul>
+        <li>
+          Media Studio signs in with an <strong>app password</strong> that the operator creates
+          for it in Bluesky (never the account password). An app password can post and upload, but
+          cannot change the account's password or settings or read direct messages.
+        </li>
+        <li>
+          It reads the account's handle and identifier, uploads and posts the account's own videos,
+          photos and text (videos through Bluesky's video service), replies to its own posts with
+          the post's first comment, and reads the account's own recent posts so nothing is posted
+          twice.
+        </li>
+      </ul>
+
+      <h3>Mastodon</h3>
+      <ul>
+        <li>
+          Media Studio uses the access token of an application the operator creates on the
+          channel's own Mastodon server, limited to the scopes below.
+        </li>
+        <li><code>read:accounts</code>: the account's ID and username.</li>
+        <li>
+          <code>write:media</code> and <code>write:statuses</code>: to upload and post (or
+          schedule) the account's own videos, photos and text, and reply to its own posts with the
+          post's first comment.
+        </li>
+        <li>
+          <code>read:statuses</code>: to check the account's recent posts so nothing is posted
+          twice, and to read the favourites, boosts and replies of its own posts.
+        </li>
+      </ul>
+
+      <h3>LinkedIn</h3>
+      <ul>
+        <li>
+          <code>openid</code> and <code>profile</code>: the member's LinkedIn ID and name, to know
+          whose posts to create.
+        </li>
+        <li>
+          <code>w_member_social</code>: to upload and post the member's own videos, photos and
+          text. Media Studio does not read the member's feed, connections, messages or post
+          statistics.
+        </li>
+        <li>The sign-in lasts 60 days; after that the operator connects again.</li>
       </ul>
 
       <h2>How we use it</h2>
       <p>
         Only to publish and check the channels' own videos, when the operator asks for it or at a
         time they scheduled. Besides videos, the operator can publish the channels' own photo posts
-        (one or several photos) and text posts to Instagram, Facebook, Threads, X and Pinterest, and
+        (one or several photos) and text posts to Instagram, Facebook, Threads, X, Pinterest, Bluesky, Mastodon and LinkedIn, and
         export them for TikTok; these use the same permissions listed above and are handled the same
         way as videos. We do not use any of this data for advertising, profiling or
         analytics, and we do not use it to develop, improve or train artificial-intelligence or
@@ -145,7 +213,7 @@
       <h2>Where it is stored</h2>
       <ul>
         <li>
-          Sign-ins (access and refresh tokens) and app credentials are stored only on the
+          Sign-ins (access and refresh tokens, and the Bluesky app password) and app credentials are stored only on the
           operator's computer, in the operating system's secure credential store (macOS Keychain or
           Windows DPAPI). They are never written to files, logs or source code.
         </li>
@@ -156,11 +224,22 @@
         <li>Media Studio has no servers or cloud storage of its own.</li>
       </ul>
 
+      <h2>Channel link pages</h2>
+      <p>
+        Each channel can have a link page on this site (for example
+        <code>/blip-and-friends/</code>) with the channel's name, its public profile links and links
+        to posts that are already public. These pages set no cookies, run no scripts, load nothing
+        from other sites and collect nothing. They are hosted on GitHub Pages; GitHub may keep
+        standard server logs as described in the
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub
+        Privacy Statement</a>.
+      </p>
+
       <h2>Sharing</h2>
       <p>
         We do not sell or share account data with anyone. Media Studio only communicates with the
         platform each video is posted to: Google (YouTube Data API), Meta (Instagram and Facebook
-        Graph API, Threads API), TikTok (Content Posting API), X (X API) and Pinterest (Pinterest API).
+        Graph API, Threads API), TikTok (Content Posting API), X (X API), Pinterest (Pinterest API), Bluesky (the account's AT Protocol server and Bluesky's video service) the channel's own Mastodon server and LinkedIn (Posts, Images and Videos APIs).
       </p>
       <p>
         Threads only accepts videos and photos from a public link, and Instagram only accepts
@@ -172,7 +251,7 @@
       <p>
         The sign-in pages on this site (<code>meta-callback.html</code>,
         <code>threads-callback.html</code>, <code>tiktok-callback.html</code>,
-        <code>pinterest-callback.html</code>) only pass the
+        <code>pinterest-callback.html</code>, <code>linkedin-callback.html</code>) only pass the
         one-time sign-in code from the platform to Media Studio on the operator's computer. They
         store nothing and load no third-party scripts.
       </p>
@@ -186,7 +265,7 @@
       <h2>Retention and deletion</h2>
       <p>
         A sign-in is kept until the operator disconnects that platform in Media Studio, which
-        deletes it from the computer (for YouTube and X it is also revoked with the platform). Access can also
+        deletes it from the computer (for YouTube and X it is also revoked with the platform; for Bluesky the session is ended). Access can also
         be removed at any time on the platform:
       </p>
       <ul>
@@ -196,6 +275,9 @@
         <li>TikTok: TikTok app → Settings and privacy → Security → Apps and services</li>
         <li>Pinterest: Settings → Security and logins → Apps (or Claimed accounts → Apps)</li>
         <li>X: Settings → Security and account access → Apps and sessions → Connected apps</li>
+        <li>Bluesky: Settings → Privacy and security → App passwords → delete "Media Studio"</li>
+        <li>Mastodon: your server → Preferences → Development → delete the "Media Studio" application</li>
+        <li>LinkedIn: Settings → Data privacy → Permitted services → remove Media Studio</li>
       </ul>
       <p>Post records are kept as the channels' publishing history and can be deleted on request.</p>
 

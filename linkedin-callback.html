@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Connecting to Media Studio…</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Connecting to Media Studio…</h1>
+      <p id="message">
+        Handing the LinkedIn sign-in back to Media Studio on this computer. Keep Media Studio
+        running.
+      </p>
+    </main>
+    <script>
+      (() => {
+        var target = "http://localhost:7788/oauth/linkedin/callback";
+        var allowed = /^[A-Za-z0-9._~+/=-]{1,2048}$/;
+        var params = new URLSearchParams(window.location.search);
+        var forward = new URLSearchParams();
+        ["code", "state", "error", "error_reason", "error_description"].forEach((key) => {
+          var value = params.get(key);
+          if (value !== null && (key.indexOf("error") === 0 || allowed.test(value))) {
+            forward.set(key, value);
+          }
+        });
+        if (!forward.has("state") && !forward.has("error")) {
+          document.getElementById("message").textContent =
+            "This page only finishes a Media Studio sign-in. Start again from Media Studio → Settings → Accounts.";
+          return;
+        }
+        window.location.replace(target + "?" + forward.toString());
+      })();
+    </script>
+  </body>
+</html>
