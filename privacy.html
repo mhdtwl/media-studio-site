@@ -4,21 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy Policy – Media Studio</title>
-    <meta name="description" content="How Media Studio, the publishing tool for the Blip &amp; Friends channels, handles data from YouTube, Instagram, Facebook, Threads, TikTok, X, Pinterest, Bluesky, Mastodon and LinkedIn." />
+    <meta name="description" content="How Media Studio, the publishing tool for the Blip &amp; Friends channels, handles data from YouTube, Instagram, Facebook, Threads, TikTok, X, Pinterest, Bluesky, Mastodon and LinkedIn, and how its Telegram bot handles messages." />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
       <p class="back"><a href="index.html">← Media Studio</a></p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Media Studio · Effective 2026-10-18</p>
+      <p class="meta">Media Studio · Effective 2026-10-19</p>
 
       <h2>Who we are</h2>
       <p>
         Media Studio is a private tool that the operator of the <strong>Blip &amp; Friends</strong>
         channels runs on their own computer to publish the channels' own videos to YouTube,
-        Instagram, Facebook, Threads, TikTok, X, Pinterest, Bluesky, Mastodon and LinkedIn. It is not offered to the public and has no user
-        accounts of its own.
+        Instagram, Facebook, Threads, TikTok, X, Pinterest, Bluesky, Mastodon and LinkedIn, and to
+        start new episodes from the operator's phone through the channel's own Telegram bot. It is
+        not offered to the public and has no user accounts of its own.
       </p>
       <p>
         Data controller: <strong>the private individual who runs the Blip &amp; Friends channels</strong>, the Netherlands. Contact:
@@ -29,7 +30,8 @@
       <p>
         Media Studio only signs in to the operator's own accounts, and only with the permissions
         below. It never accesses viewers' data, comments, followers, messages, analytics, email or
-        contacts.
+        contacts. The only messages it reads are the ones sent to the channel's own Telegram bot
+        (see <a href="#telegram">Telegram</a>).
       </p>
 
       <h3>YouTube (Google)</h3>
@@ -199,10 +201,43 @@
         <li>The sign-in lasts 60 days; after that the operator connects again.</li>
       </ul>
 
+      <h3 id="telegram">Telegram</h3>
+      <ul>
+        <li>
+          The operator can connect a Telegram bot of their own (created with Telegram's
+          @BotFather) to a channel, to start episodes from their phone. The bot token is stored
+          like the other sign-ins (see below).
+        </li>
+        <li>
+          <strong>Received:</strong> the messages sent to that bot. Media Studio only acts on
+          messages from private chats the operator paired with a one-time code shown on their
+          computer: commands, episode ideas and episode scripts (as text or a file). Messages from
+          chats that are not paired, and from groups, are discarded without being stored or
+          logged. While a pairing code is valid (10 minutes), wrong codes are counted per chat in
+          memory only, never written to disk; the counts are dropped within a minute after the code
+          is used, replaced or expires, and when Media Studio stops.
+        </li>
+        <li>
+          <strong>Sent:</strong> only to the paired chats: the episode prompt, short status
+          replies, the cover image and the rendered video of the channel's own episodes.
+        </li>
+        <li>
+          <strong>Kept:</strong> the IDs of the paired chats (and the series each one uses), only on
+          the operator's computer. Unpairing a chat or disconnecting the bot deletes them. Scripts
+          sent to the bot become part of the channel's own episodes.
+        </li>
+        <li>
+          Telegram processes these messages under its own
+          <a href="https://telegram.org/privacy">privacy policy</a>.
+        </li>
+      </ul>
+
       <h2>How we use it</h2>
       <p>
         Only to publish and check the channels' own videos, when the operator asks for it or at a
-        time they scheduled. Besides videos, the operator can publish the channels' own photo posts
+        time they scheduled, and, through the Telegram bot, to start, save and render new episodes
+        from the operator's paired chats and send the prompt, the cover and the video back to
+        those chats. Wrong pairing codes are counted, in memory only, to protect pairing. Besides videos, the operator can publish the channels' own photo posts
         (one or several photos) and text posts to Instagram, Facebook, Threads, X, Pinterest, Bluesky, Mastodon and LinkedIn, and
         export them for TikTok; these use the same permissions listed above and are handled the same
         way as videos. We do not use any of this data for advertising, profiling or
@@ -213,13 +248,17 @@
       <h2>Where it is stored</h2>
       <ul>
         <li>
-          Sign-ins (access and refresh tokens, and the Bluesky app password) and app credentials are stored only on the
+          Sign-ins (access and refresh tokens, the Bluesky app password and the Telegram bot token) and app credentials are stored only on the
           operator's computer, in the operating system's secure credential store (macOS Keychain or
           Windows DPAPI). They are never written to files, logs or source code.
         </li>
         <li>
           Records of published posts (title, caption, platform post ID and link) are kept in a
           local database and in the operator's private source repository.
+        </li>
+        <li>
+          The IDs of paired Telegram chats are kept in a local file on the operator's computer, not
+          in the source repository.
         </li>
         <li>Media Studio has no servers or cloud storage of its own.</li>
       </ul>
@@ -237,9 +276,10 @@
 
       <h2>Sharing</h2>
       <p>
-        We do not sell or share account data with anyone. Media Studio only communicates with the
-        platform each video is posted to: Google (YouTube Data API), Meta (Instagram and Facebook
-        Graph API, Threads API), TikTok (Content Posting API), X (X API), Pinterest (Pinterest API), Bluesky (the account's AT Protocol server and Bluesky's video service) the channel's own Mastodon server and LinkedIn (Posts, Images and Videos APIs).
+        We do not sell or share account data with anyone. Besides the Telegram Bot API (for the
+        channel's own bot, see <a href="#telegram">Telegram</a>), Media Studio only communicates
+        with the platform each video is posted to: Google (YouTube Data API), Meta (Instagram and Facebook
+        Graph API, Threads API), TikTok (Content Posting API), X (X API), Pinterest (Pinterest API), Bluesky (the account's AT Protocol server and Bluesky's video service), the channel's own Mastodon server and LinkedIn (Posts, Images and Videos APIs).
       </p>
       <p>
         Threads only accepts videos and photos from a public link, and Instagram only accepts
@@ -264,7 +304,7 @@
 
       <h2>Retention and deletion</h2>
       <p>
-        A sign-in is kept until the operator disconnects that platform in Media Studio, which
+        A sign-in (including the Telegram bot token) is kept until the operator disconnects that platform in Media Studio, which
         deletes it from the computer (for YouTube and X it is also revoked with the platform; for Bluesky the session is ended). Access can also
         be removed at any time on the platform:
       </p>
@@ -278,13 +318,19 @@
         <li>Bluesky: Settings → Privacy and security → App passwords → delete "Media Studio"</li>
         <li>Mastodon: your server → Preferences → Development → delete the "Media Studio" application</li>
         <li>LinkedIn: Settings → Data privacy → Permitted services → remove Media Studio</li>
+        <li>
+          Telegram: in Media Studio, Settings → Telegram → Unpair or Disconnect (deletes the paired
+          chats and the bot token from the computer); in Telegram, stop or block the bot, or delete
+          it with @BotFather (<code>/deletebot</code>)
+        </li>
       </ul>
       <p>Post records are kept as the channels' publishing history and can be deleted on request.</p>
 
       <h2>Children</h2>
       <p>
         The Blip &amp; Friends videos are made for children, but Media Studio does not collect any
-        information from children or other viewers. Viewing happens on each platform, under its
+        information from children or other viewers; its Telegram bot only acts on the operator's
+        own paired chats. Viewing happens on each platform, under its
         own rules and privacy policy. On YouTube, these videos are marked "made for kids"; on
         TikTok, comments are turned off for them.
       </p>
